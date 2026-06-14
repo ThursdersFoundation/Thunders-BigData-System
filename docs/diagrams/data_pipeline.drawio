@@ -1,0 +1,189 @@
+<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="Thunders-BigData-System" version="24.0.0" type="device">
+  <diagram name="Data Pipeline" id="pipeline-001">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ===== STAGE 1: DATA SOURCES ===== -->
+        <mxCell id="src_group" value="Data Sources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="180" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="src_rest" value="REST API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="75" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="src_iot" value="IoT Sensors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="120" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="src_db" value="Databases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="165" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="src_files" value="Files / Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="210" width="130" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== STAGE 2: INGESTION LAYER ===== -->
+        <mxCell id="ingest_group" value="Ingestion Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="180" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="ingest_kafka" value="Apache Kafka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="285" y="90" width="130" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="ingest_api" value="API Collectors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="285" y="150" width="130" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== STAGE 3: PROCESSING LAYER ===== -->
+        <mxCell id="proc_group" value="Processing Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="490" y="40" width="180" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="proc_spark" value="Spark Batch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="515" y="75" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="proc_flink" value="Flink Streaming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="515" y="120" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="proc_etl" value="ETL Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="515" y="165" width="130" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== STAGE 4: STORAGE ROUTING ===== -->
+        <mxCell id="route_group" value="Storage Routing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="180" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="route_hot" value="Hot Tier&#xa;(Real-time)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF4444;strokeColor=#CC0000;fontColor=#FFFFFF;fontSize=11;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="75" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="route_warm" value="Warm Tier&#xa;(Recent)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF9900;strokeColor=#CC7A00;fontColor=#FFFFFF;fontSize=11;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="120" width="130" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="route_cold" value="Cold Tier&#xa;(Archive)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F5496;fontColor=#FFFFFF;fontSize=11;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="165" width="130" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== DATA LAKE ZONES (Bottom Section) ===== -->
+        <mxCell id="lake_group" value="Data Lake Zones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="260" y="300" width="640" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="zone_raw" value="Raw / Bronze&#xa;Zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8B4513;strokeColor=#6B3410;fontColor=#FFFFFF;fontSize=12;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="340" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="zone_silver" value="Cleansed / Silver&#xa;Zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C0C0C0;strokeColor=#999999;fontColor=#333333;fontSize=12;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="340" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="zone_gold" value="Curated / Gold&#xa;Zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#333333;fontSize=12;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="340" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== OUTPUT LAYER ===== -->
+        <mxCell id="output_group" value="Output" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="260" y="460" width="640" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_dashboard" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d79b00;fontSize=11;shadow=1;shape=mxgraph.flowchart.display;" vertex="1" parent="1">
+          <mxGeometry x="290" y="495" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_api" value="API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d79b00;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="495" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_ml" value="ML Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d79b00;fontSize=11;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="495" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Sources -> Ingestion ===== -->
+        <mxCell id="p_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="src_rest" target="ingest_kafka" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" source="src_iot" target="ingest_kafka" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" source="src_db" target="ingest_api" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" source="src_files" target="ingest_api" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Ingestion -> Processing ===== -->
+        <mxCell id="p_e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" source="ingest_kafka" target="proc_spark" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" source="ingest_kafka" target="proc_flink" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" source="ingest_api" target="proc_etl" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Processing -> Storage Routing ===== -->
+        <mxCell id="p_e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" source="proc_spark" target="route_warm" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" source="proc_flink" target="route_hot" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" source="proc_etl" target="route_cold" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Storage Routing -> Data Lake Zones ===== -->
+        <mxCell id="p_e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="route_hot" target="zone_raw" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="route_warm" target="zone_raw" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="route_cold" target="zone_raw" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Data Lake Zone progression ===== -->
+        <mxCell id="p_e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=3;" edge="1" source="zone_raw" target="zone_silver" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e14_label" value="Cleanse &amp;&#xa;Validate" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#6c8ebf;" vertex="1" connectable="0" parent="p_e14">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p_e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=3;" edge="1" source="zone_silver" target="zone_gold" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e15_label" value="Aggregate &amp;&#xa;Enrich" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#6c8ebf;" vertex="1" connectable="0" parent="p_e15">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== CONNECTIONS: Gold Zone -> Output ===== -->
+        <mxCell id="p_e16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;" edge="1" source="zone_gold" target="out_dashboard" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;" edge="1" source="zone_silver" target="out_api" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_e18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;" edge="1" source="zone_gold" target="out_ml" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== FLOW DIRECTION ARROWS ===== -->
+        <mxCell id="arrow1" value="" style="shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=none;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="218" y="110" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" value="" style="shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=none;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="448" y="110" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow3" value="" style="shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=none;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="678" y="110" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow4" value="" style="shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;whiteSpace=wrap;html=1;fillColor=#9673a6;strokeColor=none;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="770" y="248" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== TITLE ===== -->
+        <mxCell id="title" value="Thunders BigData System - Data Pipeline" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="360" y="600" width="340" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
