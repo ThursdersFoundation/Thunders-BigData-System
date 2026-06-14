@@ -1,0 +1,92 @@
+[
+  {
+    "metric_id": "MET001",
+    "metric_name": "cpu_usage",
+    "value": 72.4,
+    "unit": "percent",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "source": "kafka-broker-1",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "kafka"}
+  },
+  {
+    "metric_id": "MET002",
+    "metric_name": "memory_usage",
+    "value": 8142.5,
+    "unit": "MB",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "source": "spark-worker-3",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "spark"}
+  },
+  {
+    "metric_id": "MET003",
+    "metric_name": "request_rate",
+    "value": 1523.7,
+    "unit": "req/s",
+    "timestamp": "2024-01-15T10:30:15Z",
+    "source": "api-gateway",
+    "tags": {"environment": "production", "region": "eu-west-1", "service": "api-gateway"}
+  },
+  {
+    "metric_id": "MET004",
+    "metric_name": "error_rate",
+    "value": 0.42,
+    "unit": "percent",
+    "timestamp": "2024-01-15T10:30:30Z",
+    "source": "api-gateway",
+    "tags": {"environment": "production", "region": "eu-west-1", "service": "api-gateway"}
+  },
+  {
+    "metric_id": "MET005",
+    "metric_name": "latency_p99",
+    "value": 245.8,
+    "unit": "ms",
+    "timestamp": "2024-01-15T10:31:00Z",
+    "source": "spark-master",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "spark"}
+  },
+  {
+    "metric_id": "MET006",
+    "metric_name": "throughput",
+    "value": 48520.3,
+    "unit": "records/s",
+    "timestamp": "2024-01-15T10:31:15Z",
+    "source": "kafka-broker-2",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "kafka"}
+  },
+  {
+    "metric_id": "MET007",
+    "metric_name": "active_connections",
+    "value": 342,
+    "unit": "count",
+    "timestamp": "2024-01-15T10:31:30Z",
+    "source": "postgres-primary",
+    "tags": {"environment": "production", "region": "us-west-2", "service": "database"}
+  },
+  {
+    "metric_id": "MET008",
+    "metric_name": "queue_depth",
+    "value": 12847,
+    "unit": "messages",
+    "timestamp": "2024-01-15T10:31:45Z",
+    "source": "kafka-broker-1",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "kafka"}
+  },
+  {
+    "metric_id": "MET009",
+    "metric_name": "cpu_usage",
+    "value": 89.1,
+    "unit": "percent",
+    "timestamp": "2024-01-15T10:32:00Z",
+    "source": "spark-worker-1",
+    "tags": {"environment": "production", "region": "us-east-1", "service": "spark"}
+  },
+  {
+    "metric_id": "MET010",
+    "metric_name": "throughput",
+    "value": 12450.8,
+    "unit": "MB/s",
+    "timestamp": "2024-01-15T10:32:15Z",
+    "source": "hdfs-namenode",
+    "tags": {"environment": "production", "region": "us-west-2", "service": "hdfs"}
+  }
+]
