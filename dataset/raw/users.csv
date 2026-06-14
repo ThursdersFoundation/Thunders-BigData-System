@@ -1,0 +1,21 @@
+user_id,username,email,first_name,last_name,age,gender,city,country,registration_date,segment,is_active
+USR001,alicejohnson,alice.johnson@email.com,Alice,Johnson,34,F,New York,United States,2023-01-15,Premium,true
+USR002,bobsmith,bob.smith@email.com,Bob,Smith,28,M,London,United Kingdom,2023-02-20,Standard,true
+USR003,carlosmartinez,carlos.martinez@email.com,Carlos,Martinez,41,M,Madrid,Spain,2023-03-10,Premium,true
+USR003,dianachen,diana.chen@email.com,Diana,Chen,29,F,Shanghai,China,2023-04-05,Standard,true
+USR005,emmawilson,emma.wilson@email.com,Emma,Wilson,52,F,Sydney,Australia,2023-05-18,Basic,true
+USR006,fatimaalrashid,fatima.alrashid@email.com,Fatima,Al-Rashid,37,F,Dubai,UAE,2023-06-22,Premium,true
+USR007,georgmueller,georg.mueller@email.com,Georg,Mueller,45,M,Berlin,Germany,2023-07-30,Standard,false
+USR008,hiroshitanaka,hiroshi.tanaka@email.com,Hiroshi,Tanaka,33,M,Tokyo,Japan,2023-08-14,Premium,true
+USR009,isabellarossi,isabella.rossi@email.com,Isabella,Rossi,26,F,Rome,Italy,2023-09-03,Basic,true
+USR010,jpdubois,jp.dubois@email.com,Jean-Pierre,Dubois,58,M,Paris,France,2023-10-11,Standard,true
+USR011,kimsooyeon,kim.sooyeon@email.com,Soo-Yeon,Kim,31,F,Seoul,South Korea,2023-11-25,Premium,true
+USR012,lucassilva,lucas.silva@email.com,Lucas,Silva,39,M,Sao Paulo,Brazil,2023-12-08,Standard,false
+USR013,mariaKowalski,maria.kowalski@email.com,Maria,Kowalski,44,F,Warsaw,Poland,2024-01-19,Basic,true
+USR014,nilsandersen,nils.andersen@email.com,Nils,Andersen,62,M,Oslo,Norway,2024-02-14,Standard,true
+USR015,olgapetrov,olga.petrov@email.com,Olga,Petrov,36,F,Moscow,Russia,2024-03-28,Premium,true
+USR016,patrickobrien,patrick.obrien@email.com,Patrick,O'Brien,27,M,Dublin,Ireland,2024-04-10,Standard,true
+USR017,qingli,qing.li@email.com,Qing,Li,48,F,Beijing,China,2024-05-22,Basic,false
+USR018,rajpatel,raj.patel@email.com,Raj,Patel,35,M,Mumbai,India,2024-06-17,Premium,true
+USR019,sarajohansson,sara.johansson@email.com,Sara,Johansson,42,F,Stockholm,Sweden,2024-07-05,Standard,true
+USR020,tomasnovak,tomas.novak@email.com,Tomas,Novak,30,M,Prague,Czech Republic,2024-08-29,Basic,true
