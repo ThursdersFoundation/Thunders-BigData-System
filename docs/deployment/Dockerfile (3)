@@ -1,0 +1,144 @@
+#==============================================================================
+# Thunders-BigData-System — Multi-Stage Dockerfile
+# Builds a production-ready container with Spark, Python, and application code
+#==============================================================================
+
+# ---------------------------------------------------------------------------
+# Stage 1: Build dependencies
+# ---------------------------------------------------------------------------
+FROM python:3.11-slim AS builder
+
+WORKDIR /build
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc \
+    g++ \
+    libffi-dev \
+    libssl-dev \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create virtual environment
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
+
+# ---------------------------------------------------------------------------
+# Stage 2: Java & Spark runtime
+# ---------------------------------------------------------------------------
+FROM eclipse-temurin:11-jre AS spark-base
+
+ARG SPARK_VERSION=3.5.1
+ARG HADOOP_VERSION=3
+ARG SPARK_HOME=/opt/spark
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    wget \
+    tini \
+    libpq5 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install Apache Spark
+RUN wget -q "https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
+    && tar -xzf "spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" -C /opt \
+    && mv "/opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}" "${SPARK_HOME}" \
+    && rm "spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz"
+
+ENV SPARK_HOME=${SPARK_HOME}
+ENV PATH="${SPARK_HOME}/bin:${SPARK_HOME}/sbin:${PATH}"
+
+# ---------------------------------------------------------------------------
+# Stage 3: Production image
+# ---------------------------------------------------------------------------
+FROM python:3.11-slim AS production
+
+LABEL maintainer="Thunders BigData Team"
+LABEL description="Thunders BigData System - Production Container"
+LABEL version="1.0.0"
+
+ARG SPARK_HOME=/opt/spark
+ARG APP_HOME=/opt/thunders-bigdata
+ARG USER=thunders
+ARG UID=1000
+ARG GID=1000
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    tini \
+    libpq5 \
+    curl \
+    krb5-user \
+    && rm -rf /var/lib/apt/lists/* \
+    && groupadd -g ${GID} ${USER} \
+    && useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USER}
+
+# Copy Spark from spark-base stage
+COPY --from=spark-base ${SPARK_HOME} ${SPARK_HOME}
+
+# Copy Python virtual environment from builder stage
+COPY --from=builder /opt/venv /opt/venv
+
+# Set environment variables
+ENV SPARK_HOME=${SPARK_HOME} \
+    PATH="/opt/venv/bin:${SPARK_HOME}/bin:${SPARK_HOME}/sbin:${PATH}" \
+    PYTHONPATH="${APP_HOME}/src:${APP_HOME}/lib:${PYTHONPATH}" \
+    PYSPARK_PYTHON=/opt/venv/bin/python3 \
+    PYSPARK_DRIVER_PYTHON=/opt/venv/bin/python3 \
+    JAVA_HOME=/usr/local/openjdk-11 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    SPARK_CONF_DIR=${SPARK_HOME}/conf \
+    HADOOP_CONF_DIR=/etc/hadoop/conf
+
+# Create application directories
+RUN mkdir -p ${APP_HOME}/src \
+    ${APP_HOME}/lib \
+    ${APP_HOME}/config \
+    ${APP_HOME}/logs \
+    ${APP_HOME}/data \
+    /etc/hadoop/conf \
+    && chown -R ${USER}:${USER} ${APP_HOME}
+
+WORKDIR ${APP_HOME}
+
+# Copy application source code
+COPY --chown=${USER}:${USER} src/ ${APP_HOME}/src/
+COPY --chown=${USER}:${USER} config/ ${APP_HOME}/config/
+COPY --chown=${USER}:${USER} scripts/ ${APP_HOME}/scripts/
+
+# Copy Spark configuration
+COPY --chown=${USER}:${USER} config/spark-defaults.conf ${SPARK_HOME}/conf/spark-defaults.conf
+COPY --chown=${USER}:${USER} config/log4j2.properties ${SPARK_HOME}/conf/log4j2.properties
+
+# Make scripts executable
+RUN chmod +x ${APP_HOME}/scripts/*.sh 2>/dev/null || true
+
+# Switch to non-root user
+USER ${USER}
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8080/health || exit 1
+
+# Expose ports
+# 8080 — Application API
+# 4040 — Spark UI
+# 18080 — Spark History Server
+# 7077  — Spark Master
+EXPOSE 8080 4040 18080 7077
+
+# Volume for persistent data and logs
+VOLUME ["${APP_HOME}/data", "${APP_HOME}/logs"]
+
+# Entry point
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
+# Default command
+CMD ["python", "-m", "src.main"]
