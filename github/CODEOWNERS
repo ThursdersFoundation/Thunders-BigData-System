@@ -1,0 +1,17 @@
+# Default owners
+*                       @thunders/core
+
+# Per-area owners
+/apps/dashboard         @thunders/frontend
+/apps/api               @thunders/backend
+/apps/mobile            @thunders/mobile
+/apps/admin             @thunders/frontend
+/pipelines              @thunders/data
+/ai                     @thunders/ml
+/analytics              @thunders/data
+/database               @thunders/data
+/infrastructure         @thunders/devops
+/services               @thunders/backend
+/shared                 @thunders/core
+/docs                   @thunders/docs
+/.github                @thunders/devops
