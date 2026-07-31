@@ -1,0 +1,22 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure kubectl
+        run: |
+          echo "$KUBECONFIG_B64" | base64 -d > kubeconfig
+          export KUBECONFIG=$PWD/kubeconfig
+      - name: Apply manifests
+        run: kubectl apply -f infrastructure/kubernetes/
+      - name: Restart deployments
+        run: kubectl rollout restart deployment -n thunders
+    env:
+      KUBECONFIG_B64: ${{ secrets.KUBECONFIG_B64 }}

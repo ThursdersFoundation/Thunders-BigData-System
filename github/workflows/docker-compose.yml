@@ -1,0 +1,72 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: thunders
+      POSTGRES_PASSWORD: thunders
+      POSTGRES_DB: thunders
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  mongo:
+    image: mongo:7
+    ports: ["27017:27017"]
+    volumes: ["mongodata:/data/db"]
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.3
+    ports: ["8123:8123", "9000:9000"]
+    volumes: ["clickhousedata:/var/lib/clickhouse"]
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    depends_on: [zookeeper]
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports: ["9092:9092"]
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports: ["2181:2181"]
+
+  minio:
+    image: minio/minio:RELEASE.2024-03-01T00-00-00Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: thunders
+      MINIO_ROOT_PASSWORD: thunders
+    ports: ["9000:9000", "9001:9001"]
+    volumes: ["miniodata:/data"]
+
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.api
+    env_file: .env
+    ports: ["8000:8000"]
+    depends_on: [postgres, redis, mongo]
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.dashboard
+    env_file: .env
+    ports: ["3000:3000"]
+    depends_on: [api]
+
+volumes:
+  pgdata:
+  mongodata:
+  clickhousedata:
+  miniodata:
