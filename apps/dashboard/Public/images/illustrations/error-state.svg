@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" role="img" aria-label="Error illustration">
+  <ellipse cx="140" cy="176" rx="96" ry="12" fill="#f43f5e" opacity="0.08"/>
+  <g>
+    <rect x="84" y="76" width="112" height="72" rx="10" fill="#27272a" stroke="#52525b" stroke-width="1.5"/>
+    <rect x="84" y="76" width="112" height="20" rx="10" fill="#3f3f46"/>
+    <circle cx="98" cy="86" r="3.5" fill="#f43f5e"/>
+    <circle cx="110" cy="86" r="3.5" fill="#fbbf24"/>
+    <circle cx="122" cy="86" r="3.5" fill="#34d399"/>
+    <g stroke="#f43f5e" stroke-width="3" stroke-linecap="round">
+      <line x1="112" y1="112" x2="130" y2="130"/>
+      <line x1="130" y1="112" x2="112" y2="130"/>
+    </g>
+    <g stroke="#71717a" stroke-width="3" stroke-linecap="round">
+      <line x1="144" y1="121" x2="170" y2="121"/>
+    </g>
+  </g>
+  <g>
+    <path d="M212 118 236 160h-48Z" fill="#f59e0b" opacity="0.15"/>
+    <path d="M212 124 231 157h-38Z" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="212" y1="134" x2="212" y2="145" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="212" cy="151" r="1.8" fill="#fbbf24"/>
+  </g>
+  <g stroke="#a1a1aa" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <line x1="46" y1="96" x2="62" y2="96"/>
+    <line x1="38" y1="112" x2="58" y2="112"/>
+  </g>
+  <path d="M60 60 68 44 76 60" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="68" y1="44" x2="68" y2="66" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="40" cy="140" r="3" fill="#f43f5e" opacity="0.6"/>
+  <circle cx="244" cy="84" r="2.5" fill="#a1a1aa" opacity="0.7"/>
+</svg>
