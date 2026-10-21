@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="Thunders BigData System">
+  <defs>
+    <linearGradient id="tld-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f3f46"/>
+      <stop offset="1" stop-color="#18181b"/>
+    </linearGradient>
+    <linearGradient id="tld-bolt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde047"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#tld-bg)"/>
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="15.25" fill="none" stroke="#fbbf24" stroke-opacity="0.55" stroke-width="1.5"/>
+  <path d="M36.5 7 16.5 37.5h10.8L23.5 57 47.5 25.5H35.2L40.5 7Z" fill="url(#tld-bolt)"/>
+  <text x="76" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="800" letter-spacing="1.5" fill="#fafafa">THUNDERS</text>
+  <text x="77" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="600" letter-spacing="4.2" fill="#fbbf24">BIGDATA SYSTEM</text>
+</svg>
