@@ -1,131 +1,223 @@
-# ⚡ Thunders BigData System
+<div align="center">
 
-> **The Unified Engine for Distributed Data Processing, MLOps, and Enterprise AI Orchestration.**
+<img width="234" height="234" alt="image" src="https://github.com/user-attachments/assets/201d9e98-0d22-4a34-a84c-54c524ba18b3" />
 
-**Thunders BigData System** is a next-generation enterprise-grade platform designed to collect, process, store, analyze, and transform massive volumes of structured, semi-structured, and unstructured data across distributed environments.
+# ⚡ THUNDERS BIGDATA SYSTEM
 
-Engineered for extreme scalability, fault tolerance, and high-performance computing, Thunders unites modern data engineering, real-time stream processing, enterprise data warehousing, MLOps, and Generative AI orchestration into a single, cohesive ecosystem.
+### *The Unified Engine for Distributed Data Processing, MLOps & Enterprise AI Orchestration*
 
-## 📑 Table of Contents
+**One control plane. One governance model. One polyglot runtime.**
+*From petabyte-scale batch ETL to low-latency streaming to autonomous AI agents.*
 
-* [Core Features](https://www.google.com/search?q=%23-core-features)
-* [System Architecture](https://www.google.com/search?q=%23-system-architecture)
-* [Supported Languages & Tech Stack](https://www.google.com/search?q=%23-supported-languages--tech-stack)
-* [Quick Start](https://www.google.com/search?q=%23-quick-start)
-* [Use Cases](https://www.google.com/search?q=%23-use-cases)
-* [Enterprise & AI Capabilities](https://www.google.com/search?q=%23-enterprise--ai-capabilities)
-* [Contributing](https://www.google.com/search?q=%23-contributing)
-* [License](https://www.google.com/search?q=%23-license)
+[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Languages](https://img.shields.io/badge/Languages-11%20Supported-0A1628?style=for-the-badge&logo=codereview&logoColor=F59E0B)](#-supported-languages--tech-stack)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](#-quick-start-guide)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-Cloud--Native-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](#-quick-start-guide)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](#-contributing--community)
+[![Stars](https://img.shields.io/badge/⭐-Star%20the%20Repo-F59E0B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username/thunders-bigdata-system/stargazers)
 
-## 🚀 Core Features
+[🚀 Quick Start](#-quick-start-guide) · [🏛 Architecture](#-system-architecture) · [📊 Performance](#-performance-design-targets) · [🥊 vs Alternatives](#-competitive-positioning) · [🤝 Contributing](#-contributing--community)
 
-### 1. High-Performance Data Engineering & Pipeline Automation
+---
 
-* **Automated ETL/ELT:** Scale complex transformation pipelines across multi-node distributed clusters.
-* **Stream & Batch Processing:** Low-latency stream engine capable of handling high-velocity IoT streams, telemetry, and transactional logs alongside bulk batch processing.
-* **Unified Lakehouse Support:** Seamless integration with modern data lakes, warehouses, and hybrid-cloud storage systems.
+</div>
 
-### 2. Next-Gen AI & LLM Ecosystem
+## ⚡ Why Thunders?
 
-* **Generative AI & Agentic Workflows:** Native runtime for Large Language Models (LLMs), Retrieval-Augmented Generation (RAG) pipelines, and Autonomous AI Agents.
-* **Full-Lifecycle MLOps:** Integrated feature store, model registry, automated training pipelines, and real-time inference monitoring.
-* **Multimodal Processing:** Native capabilities for processing text, audio, image, and video data at scale.
+Modern organizations don't suffer from a shortage of data tools — they suffer from **too many of them**.
+A typical enterprise stitches together separate systems for ingestion, batch transformation, stream
+analytics, warehousing, machine learning, and governance. Each boundary adds integration tax,
+duplicated security policy, and dead time between the moment data lands and the moment a model or
+dashboard can act on it.
 
-### 3. Enterprise Security & Observability
+**Thunders is a single bolt that connects the entire data lifecycle** — high-velocity ingestion,
+distributed computation, AI-native processing, and governed storage — orchestrated through one
+control plane and deployed identically on a laptop, a private cluster, or a multi-region cloud.
 
-* **End-to-End Governance:** Granular Role-Based Access Control (RBAC), lineage tracking, data masking, and compliance enforcement.
-* **Comprehensive Observability:** Real-time metrics, pipeline tracing, performance monitoring, and resource usage diagnostics.
+---
 
-## 🛠 Supported Languages & Tech Stack
+## 🔥 Headline Numbers
 
-Thunders provides a polyglot, flexible environment for developers, data engineers, and data scientists:
+> Engineering **design targets** that guide development — validated by published benchmarks as releases mature.
 
-| Category | Supported Languages / Technologies |
-| --- | --- |
+| **22.5M** | **99.99%** | **11** | **4-in-1** |
+|:---:|:---:|:---:|:---:|
+| events/sec ingest<br>design target @ 200 nodes | availability<br>multi-master control plane | programming languages<br>out of the box | ingestion · compute · AI/MLOps · governance |
+
+---
+
+## ✨ Core Capabilities
+
+### 🏗 High-Performance Data Engineering & Pipeline Automation
+- **Automated ETL/ELT** — declarative definitions, dependency-aware scheduling, automatic retries across multi-node clusters. You describe *the what*; the platform resolves *the how*.
+- **Stream & batch, one engine** — absorb high-velocity IoT telemetry and transactional logs next to bulk batch jobs, with the same API. No duplicated logic, ever.
+- **Unified lakehouse** — one logical layer over data lakes, warehouses, and hybrid-cloud storage with warehouse-grade reliability.
+
+### 🤖 Next-Generation AI & LLM Ecosystem
+- **Native LLM runtime** — first-class LLM serving, RAG pipelines over governed corporate data, and autonomous AI agents that plan and act on enterprise knowledge.
+- **Full-lifecycle MLOps** — integrated feature store, versioned model registry, automated retraining, and real-time inference monitoring with drift detection.
+- **Multimodal at scale** — text, audio, image, and video under the same pipeline primitives and governance model.
+
+### 🛡 Enterprise Security & Observability
+- **End-to-end governance** — granular RBAC down to column scope, automatic lineage tracking, dynamic data masking, and compliance enforcement hooks.
+- **Live observability** — real-time metrics, per-pipeline tracing, and cost diagnostics. Every job answers: *is it running, how fast, what does it cost, what broke first?*
+
+---
+
+## 🏛 System Architecture
+
+Three horizontal planes: a **Control Plane** that orchestrates everything, a **Data Plane** of three
+specialized engine pillars, and a **Storage & Governance Layer** that protects every byte.
+
+<div align="center">
+
+![Thunders Architecture](assets/thunders-architecture.png)
+
+</div>
+
+| Plane | Components |
+|---|---|
+| **Control Plane** | Pipeline orchestration · job scheduler · RBAC & security admin · observability console |
+| **Ingestion Engine** | IoT & event streaming · REST APIs & webhooks · database/lake/SaaS connectors — back-pressure aware |
+| **Distributed Compute** | Petabyte batch ETL/ELT · real-time analytics · distributed lakehouse — one elastic resource pool |
+| **AI & MLOps Suite** | LLM/RAG runtime · model inference with drift detection · autonomous agents |
+| **Storage & Governance** | Lakehouse tables · replication across failure domains · lineage · masking · compliance |
+
+> **DESIGN PRINCIPLE** — No single point of failure, horizontal scale-out everywhere, and state
+> recovery as a first-class feature. Fault tolerance is an architectural property, not an afterthought.
+
+---
+
+## 🧰 Supported Languages & Tech Stack
+
+| Category | Supported |
+|---|---|
 | **Languages** | Python, Java, Scala, SQL, Go, Rust, C++, C#, JavaScript, TypeScript, R |
-| **Data Engines** | Distributed SQL, Real-time Streaming, Data Lakehouse Engines |
-| **AI / Machine Learning** | LLM Orchestration, Vector Databases, Neural Engine Accelerators, MLOps Platforms |
-| **Deployment** | Docker, Kubernetes, Cloud-Native Infrastructure, On-Premises Clusters |
+| **Data Engines** | Distributed SQL · Real-Time Streaming · Data Lakehouse |
+| **AI / ML** | LLM Orchestration · Vector Databases · Neural Engine Accelerators · MLOps |
+| **Deployment** | Docker · Kubernetes · Cloud-Native · On-Premises Clusters |
 
-## ⚙️ System Architecture
+Performance-critical paths use **Rust & C++**; analytics shine in **SQL, Python & Scala**; product
+teams integrate through **TypeScript, Go, or C#** — and statisticians stay first-class with **R**.
 
-```text
-                                +-----------------------------------+
-                                |      Thunders Control Plane       |
-                                +-----------------------------------+
-                                                  |
-     +-----------------------+--------------------+-----------------------+
-     |                       |                                            |
-[ Ingestion Engine ]   [ Distributed Compute ]                       [ AI & MLOps Suite ]
-* IoT / Streaming      * Large-scale Batch (ETL/ELT)                 * LLM & RAG Pipelines
-* REST / Webhooks      * Real-time Analytics Engine                  * Model Inference Engine
-* Storage Connectors   * Distributed Lakehouse                       * Autonomous Agents
-     |                       |                                            |
-     +-----------------------+--------------------+-----------------------+
-                                                  |
-                                +-----------------------------------+
-                                | Distributed Storage & Governance  |
-                                +-----------------------------------+
+---
 
-```
+## 📊 Performance Design Targets
 
-## ⚡ Quick Start
+<div align="center">
 
-### Prerequisites
+<img src="assets/perf-throughput.png" alt="Ingest throughput design targets" width="49%"/>
+<img src="assets/perf-latency.png" alt="P99 latency design target" width="49%"/>
 
-* Docker v24.0+ and Kubernetes cluster (or Minikube for local dev)
-* Helm v3.0+
-* Python 3.10+ or Rust 1.70+ (depending on runtime target)
+</div>
 
-### Installation
+| Metric | Design Target | Engineering Notes |
+|---|---|---|
+| Sustained ingest throughput | **22.5M events/sec @ 200 nodes** | Near-linear scale-out; back-pressure aware |
+| Stream P99 latency | **< 100 ms @ 100 pipelines** | Low-latency runtime, continuous computation |
+| Batch elasticity | **10 – 200+ nodes** | Shared resource pool with streaming |
+| Availability | **99.99%** | Multi-master control plane; no SPOF |
+| Durability | **Replicated, self-healing storage** | Cross-domain replication, continuous verification |
+| Fault tolerance | **Node loss without pipeline termination** | State recovery as a first-class feature |
 
-1. **Clone the Repository:**
+---
+
+## 🥊 Competitive Positioning
+
+| Capability | Legacy Hadoop-Era | Cloud Warehouses | **Thunders** ⚡ |
+|---|:---:|:---:|:---:|
+| Batch & stream unification | Stitched ecosystems | Batch-first, streaming bolted on | ✅ **One engine by design** |
+| AI / LLM orchestration | Manual glue | Vendor-locked services | ✅ **Native RAG, agents, MLOps** |
+| Data openness | Proprietary formats | Semi-open formats | ✅ **Open lakehouse** |
+| Governance & lineage | Bolt-on modules | Config drift per service | ✅ **Built in end-to-end** |
+| Deployment | Heavy bespoke ops | Provider-tied | ✅ **Docker / K8s, anywhere** |
+| Polyglot development | JVM-centric | SQL + vendor SDKs | ✅ **11 languages** |
+| Commercial model | High op-ex overhead | Consumption lock-in | ✅ **MIT License** |
+
+> **WHERE THUNDERS WINS** — One governed engine from ingestion to inference, an open lakehouse core,
+> and an MIT license that keeps the exit door wide open. **Freedom is a feature.**
+
+---
+
+## 🚀 Quick Start Guide
+
+**Prerequisites:** Docker v24.0+ · Helm v3.0+ · Python 3.10+ or Rust 1.70+
+
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/your-username/thunders-bigdata-system.git
 cd thunders-bigdata-system
-
 ```
 
-
-2. **Initialize Configuration:**
+### 2️⃣ Initialize configuration
 ```bash
 cp .env.example .env
 ./scripts/bootstrap.sh
-
 ```
+The bootstrap script validates prerequisites, generates local certificates, and seeds development-friendly settings.
 
-
-3. **Deploy with Docker Compose (Local Dev):**
+### 3️⃣ Deploy with Docker Compose (local development)
 ```bash
 docker-compose up -d
-
 ```
 
+### 4️⃣ Verify the deployment
+Open **http://localhost:8080** to access the **Thunders Control Plane Dashboard** — register your
+first ingestion source, launch a sample streaming pipeline, and watch metrics and lineage appear in
+real time. The same containerized artifacts scale to production Kubernetes **without modification**.
 
-4. **Verify Deployment:**
-Visit `http://localhost:8080` to access the Thunders Control Plane Dashboard.
+---
 
-## 💡 Use Cases
+## 🏭 Enterprise Use Cases
 
-* **Financial Risk & Fraud Detection:** Analyze millions of transactions per second to catch anomalies in real-time.
-* **Smart IoT & Edge Processing:** Process sensor telemetry from industrial equipment, autonomous vehicles, and smart grids.
-* **Enterprise Knowledge Assistants:** Deploy scalable RAG workflows on proprietary corporate databases using autonomous agents.
-* **Predictive Healthcare Analytics:** Manage complex biological and medical datasets with high security and strict compliance.
+| | Use Case | How Thunders Delivers |
+|:---:|---|---|
+| 💳 | **Financial Risk & Fraud Detection** | Millions of transactions/sec scored in-stream; alerts enriched with lineage for auditable investigations |
+| 📡 | **Smart IoT & Edge Processing** | Back-pressure-aware ingestion absorbs sensor surges; edge sites run the same containerized engines as the cloud |
+| 🧠 | **Enterprise Knowledge Assistants** | RAG retrieval respects the same RBAC & masking rules as the sources — answers without leaking permission boundaries |
+| 🏥 | **Predictive Healthcare Analytics** | Masked identifiers, full lineage, and multimodal pipelines joining imaging, genomics, and clinical records |
 
-## 🤝 Contributing
+---
 
-We welcome contributions from the global community! To get started:
+## 🤝 Contributing & Community
 
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+Thunders is built in the open — every connector, patch, and doc improvement moves the roadmap forward.
 
-Please read our [CONTRIBUTING.md](https://www.google.com/search?q=CONTRIBUTING.md) for details on our code of conduct and development guidelines.
+1. **Fork** the repository to your GitHub account
+2. **Branch** with a descriptive feature name
+3. **Commit** with a clear, imperative message
+4. **Push** so CI can validate the change
+5. **Pull Request** against `main` and engage with reviewers
+
+📖 Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before your first PR · 🏷 Issues labeled
+[`good first issue`](https://github.com/your-username/thunders-bigdata-system/labels/good%20first%20issue)
+are curated for newcomers · ⏱ Maintainers aim to review community PRs **within one week**.
+
+---
 
 ## 📜 Mission & License
 
-The mission of **Thunders BigData System** is to empower the future of data engineering, artificial intelligence, and distributed computing by delivering an extensible, high-performance platform for innovation, research, and enterprise-scale digital transformation.
+> The mission of Thunders BigData System is to **empower the future of data engineering, artificial
+> intelligence, and distributed computing** by delivering an extensible, high-performance platform
+> for innovation, research, and enterprise-scale digital transformation.
 
-Distributed under the MIT License. See [LICENSE](https://www.google.com/search?q=LICENSE) for details.
+Distributed under the **MIT License** — use, copy, modify, merge, publish, distribute, sublicense,
+and sell freely, subject only to retaining the copyright notice. See [`LICENSE`](LICENSE) for details.
+
+---
+
+<div align="center">
+
+**⚡ Thunder is better when it strikes together. ⚡**
+
+**[⭐ Star](https://github.com/your-username/thunders-bigdata-system/stargazers)** ·
+**[🍴 Fork](https://github.com/your-username/thunders-bigdata-system/fork)** ·
+**[🐛 Report Issue](https://github.com/your-username/thunders-bigdata-system/issues)** ·
+**[💬 Discussions](https://github.com/your-username/thunders-bigdata-system/discussions)**
+
+<sub>Thunders BigData System · Released under the MIT License · Maintained by the Open-Source Community</sub>
+
+</div>
+4. Paste teks ini ke **repo → Add file → Create new file** → beri nama `README.md` → **Commit**.
+
+Mau aku buatkan juga versi singkatnya (misalnya untuk `DESCRIPTION` repo atau tweet pengumuman), atau ada bagian yang ingin diubah dulu?
