@@ -71,7 +71,7 @@ specialized engine pillars, and a **Storage & Governance Layer** that protects e
 
 <div align="center">
 
-![Thunders Architecture](assets/thunders-architecture.png)
+<img width="898" height="483" alt="image" src="https://github.com/user-attachments/assets/699bb8d0-6c5f-4516-bb70-d67a7d96c7e0" />
 
 </div>
 
@@ -106,8 +106,10 @@ teams integrate through **TypeScript, Go, or C#** — and statisticians stay fir
 
 <div align="center">
 
-<img src="assets/perf-throughput.png" alt="Ingest throughput design targets" width="49%"/>
-<img src="assets/perf-latency.png" alt="P99 latency design target" width="49%"/>
+<img width="852" height="511" alt="image" src="https://github.com/user-attachments/assets/6dfe229b-12ac-467c-ae04-3fa3f70e13eb" />
+
+<img width="852" height="511" alt="image" src="https://github.com/user-attachments/assets/37d0edb0-070c-4e52-9f4a-d7fcb0c2f334" />
+
 
 </div>
 
@@ -216,8 +218,3 @@ and sell freely, subject only to retaining the copyright notice. See [`LICENSE`]
 **[💬 Discussions](https://github.com/your-username/thunders-bigdata-system/discussions)**
 
 <sub>Thunders BigData System · Released under the MIT License · Maintained by the Open-Source Community</sub>
-
-</div>
-4. Paste teks ini ke **repo → Add file → Create new file** → beri nama `README.md` → **Commit**.
-
-Mau aku buatkan juga versi singkatnya (misalnya untuk `DESCRIPTION` repo atau tweet pengumuman), atau ada bagian yang ingin diubah dulu?
