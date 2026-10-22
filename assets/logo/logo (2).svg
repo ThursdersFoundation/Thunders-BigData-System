@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Thunders BigData System logo</title>
+  <desc id="logo-desc">Yellow lightning bolt above the THUNDERS wordmark on a dark rounded square.</desc>
+
+  <!-- Rounded square background -->
+  <rect x="20" y="20" width="440" height="440" rx="96" ry="96" fill="#0F172A"/>
+
+  <!-- Wordmark -->
+  <text x="240" y="118" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="9" fill="#FFFFFF">THUNDERS</text>
+
+  <!-- Lightning bolt -->
+  <path d="M270 150 L185 295 L240 295 L215 375 L305 230 L250 230 Z" fill="#FACC15"/>
+</svg>
