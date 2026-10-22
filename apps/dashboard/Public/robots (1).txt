@@ -1,0 +1,5 @@
+# Thunders BigData System
+User-agent: *
+Allow: /
+
+Sitemap: https://thunders.example.com/sitemap.xml

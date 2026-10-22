@@ -1,0 +1,25 @@
+{
+  "name": "Thunders BigData System",
+  "short_name": "Thunders",
+  "description": "Enterprise big data platform dashboard for datasets, pipelines, analytics and monitoring.",
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
