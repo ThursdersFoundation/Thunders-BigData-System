@@ -1,0 +1,18 @@
+<!-- Thunders BigData System | illustrations/no-data -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="nda-title nda-desc">
+  <title id="nda-title">No data</title>
+  <desc id="nda-desc">Open box with dashed items floating above it and yellow sparkle plus signs indicating there is no data.</desc>
+  <circle cx="160" cy="130" r="98" fill="#2563EB" opacity="0.08"/>
+  <polygon points="138,116 234,116 208,140 112,140" fill="#0F172A"/>
+  <polygon points="112,140 208,140 208,196 112,196" fill="#1E293B"/>
+  <polygon points="208,140 234,116 234,172 208,196" fill="#334155"/>
+  <rect x="112" y="140" width="96" height="6" fill="#334155"/>
+  <rect x="126" y="72" width="52" height="18" rx="9" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 5" transform="rotate(-8 152 81)"/>
+  <rect x="184" y="56" width="40" height="16" rx="8" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 5" transform="rotate(7 204 64)"/>
+  <rect x="160" y="92" width="30" height="12" rx="6" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="5 5" transform="rotate(4 175 98)"/>
+  <path d="M96 64 V80 M88 72 H104" stroke="#FACC15" stroke-width="4" stroke-linecap="round"/>
+  <path d="M240 58 V70 M234 64 H246" stroke="#FACC15" stroke-width="4" stroke-linecap="round"/>
+  <path d="M254 148 V160 M248 154 H260" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="86" cy="160" r="3" fill="#94A3B8" opacity="0.5"/>
+  <circle cx="272" cy="96" r="3" fill="#94A3B8" opacity="0.5"/>
+</svg>

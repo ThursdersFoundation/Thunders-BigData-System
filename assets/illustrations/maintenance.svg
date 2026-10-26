@@ -1,0 +1,27 @@
+<!-- Thunders BigData System | illustrations/maintenance -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="mnt-title mnt-desc">
+  <title id="mnt-title">Maintenance</title>
+  <desc id="mnt-desc">Large gear crossed by a diagonal wrench with bolt-yellow spark dots indicating system maintenance.</desc>
+  <g transform="translate(140,120)">
+    <g fill="#334155">
+      <rect x="-8" y="-60" width="16" height="22" rx="4"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(45)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(90)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(135)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(180)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(225)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(270)"/>
+      <rect x="-8" y="-60" width="16" height="22" rx="4" transform="rotate(315)"/>
+    </g>
+    <circle r="46" fill="#334155"/>
+    <circle r="30" fill="#1E293B"/>
+    <circle r="13" fill="#0F172A"/>
+  </g>
+  <line x1="66" y1="196" x2="196" y2="66" stroke="#94A3B8" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="196" cy="66" r="15" fill="none" stroke="#94A3B8" stroke-width="11"/>
+  <line x1="78" y1="184" x2="184" y2="78" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="54" cy="72" r="3.5" fill="#FACC15"/>
+  <circle cx="232" cy="54" r="3.5" fill="#FACC15"/>
+  <circle cx="248" cy="176" r="3" fill="#FACC15"/>
+  <circle cx="44" cy="150" r="3" fill="#FACC15" opacity="0.8"/>
+</svg>
